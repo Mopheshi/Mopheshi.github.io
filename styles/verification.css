@@ -73,6 +73,17 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Circular Progress Bar */
+.loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #27ae60;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto; /* Center the loader */
+}
+
 /* Footer Styles */
 footer {
   text-align: center;
@@ -90,5 +101,29 @@ footer {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  .card h2 {
+    font-size: 1.5rem;
+  }
+
+  #details {
+    font-size: 1rem;
   }
 }
