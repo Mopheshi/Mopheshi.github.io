@@ -45,8 +45,8 @@ header p {
   padding: 2rem;
   max-width: 600px;
   width: 100%;
-  text-align: center;
-  animation: fadeIn 1s ease-in;
+  text-align: justify;
+  animation: fadeIn 2s ease-in;
 }
 
 .card h2 {
