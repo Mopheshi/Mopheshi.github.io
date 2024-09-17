@@ -147,39 +147,6 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Verification Section Styles */
-#verification {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 80vh;
-  padding: 2rem;
-}
-
-.card {
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  padding: 2rem;
-  max-width: 600px;
-  width: 100%;
-  text-align: center;
-  animation: fadeIn 1s ease-in;
-}
-
-.card h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-#details {
-  font-size: 1.1rem;
-}
-
-#details p {
-  margin: 0.5rem 0;
-}
-
 /* Footer with Enlarged Icons and Gradient Color */
 footer {
   text-align: center;
