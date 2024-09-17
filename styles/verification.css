@@ -45,7 +45,7 @@ header p {
   padding: 2rem;
   max-width: 600px;
   width: 100%;
-  text-align: justify;
+  text-align: left;
   animation: fadeIn 2s ease-in;
 }
 
