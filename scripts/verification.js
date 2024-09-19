@@ -18,10 +18,13 @@ document.addEventListener("DOMContentLoaded", () => {
         loader.style.display = "none";
 
         if (data["CERTIFICATE ID"]) {
-          details.innerHTML = `
-            <p><strong>First Name:</strong> ${data["FIRST NAME"]}</p>
-            <p><strong>Middle Name:</strong> ${data["MIDDLE NAME"]}</p>
-            <p><strong>Last Name:</strong> ${data["LAST NAME"]}</p>
+          document.getElementById("profile-img").src = data["PICTURE"];
+          document.getElementById(
+            "full-name"
+          ).innerText = `${data["FIRST NAME"]} ${data["LAST NAME"]}`;
+          document.getElementById("role").innerText = data["ROLE"];
+
+          details.innerHTML += `
             <p><strong>Course:</strong> ${data["COURSE"]}</p>
             <p><strong>Certificate ID:</strong> ${data["CERTIFICATE ID"]}</p>
             <p><strong>Status:</strong> ${data["STATUS"]}</p>

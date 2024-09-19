@@ -1,33 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Certificate Verification</title>
-  <link rel="stylesheet" href="styles/verification.css" />
-  <link rel="icon" href="pictures/favicon.ico" type="image/x-icon" />
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-</head>
-<body>
-  <header>
-    <h1>Certificate Verification</h1>
-    <p>Verify the authenticity of DigiMinds Academy's certificates quickly and easily.</p>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Certificate Verification</title>
+    <link rel="stylesheet" href="styles/verification.css" />
+    <link rel="icon" href="pictures/favicon.ico" type="image/x-icon" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Certificate Verification</h1>
+      <p>
+        Verify the authenticity of DigiMinds Academy's certificates quickly and
+        easily.
+      </p>
+    </header>
 
-  <section id="verification">
-    <div class="card">
-      <h2>Certificate Details</h2>
-      <div id="details">
-        <div class="loader" id="loader"></div>
-      </div>      
-    </div>
-  </section>
+    <section id="verification">
+      <div class="card">
+        <h2>Certificate Details</h2>
+        <!-- <div id="details">
+          <div class="loader" id="loader"></div>
+        </div> -->
+        <div id="details">
+          <div class="profile-container">
+            <div class="profile-picture">
+              <img id="profile-img" src="" alt="Profile Picture" />
+            </div>
+            <div class="user-info">
+              <h3 id="full-name"></h3>
+              <p id="role"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <footer>
-    <p>&copy; 2024 <a href="https://atachiz02-softwares.b12sites.com/" target="_blank">Atachiz02 Softwares</a>. All rights reserved.</p>
-  </footer>
+    <footer>
+      <p>
+        &copy; 2024
+        <a href="https://atachiz02-softwares.b12sites.com/" target="_blank"
+          >Atachiz02 Softwares</a
+        >. All rights reserved.
+      </p>
+    </footer>
 
-  <script src="scripts/verification.js"></script>
-</body>
+    <script src="scripts/verification.js"></script>
+  </body>
 </html>
