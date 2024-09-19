@@ -89,14 +89,6 @@ a:hover {
   margin: 0 auto; /* Center the loader */
 }
 
-/* Footer Styles */
-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #333;
-  color: white;
-}
-
 /* Profile Picture and User Info Styles */
 .profile-container {
   display: flex;
@@ -105,12 +97,11 @@ footer {
 }
 
 .profile-picture {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   overflow: hidden;
   margin-right: 1.5rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border: 2px solid rgba(0, 255, 21, 0.6);
 }
 
@@ -136,6 +127,14 @@ footer {
   font-size: 1rem;
   margin: 0;
   color: black;
+}
+
+/* Footer Styles */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #333;
+  color: white;
 }
 
 /* Animations */
