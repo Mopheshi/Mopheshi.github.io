@@ -39,13 +39,16 @@ header p {
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   padding: 2rem;
   max-width: 600px;
   width: 100%;
-  text-align: left;
+  text-align: center;
+  color: #fff;
   animation: fadeIn 2s ease-in;
 }
 
@@ -60,6 +63,7 @@ header p {
 
 #details p {
   margin: 0.5rem 0;
+  color: black; /* Change text color to black */
 }
 
 a {
@@ -82,77 +86,6 @@ a:hover {
   height: 60px;
   animation: spin 1s linear infinite;
   margin: 0 auto; /* Center the loader */
-}
-
-/* Glassmorphic Card */
-.card {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  padding: 2rem;
-  max-width: 600px;
-  width: 100%;
-  text-align: center;
-  color: #fff;
-  animation: fadeIn 2s ease-in;
-}
-
-/* Profile Container */
-.profile-container {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  margin-bottom: 1.5rem;
-}
-
-/* Profile Picture */
-.profile-picture {
-  border: 3px solid rgba(255, 255, 255, 0.6);
-  padding: 5px;
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-  overflow: hidden;
-  margin-right: 1rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.profile-picture img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-/* User Info */
-.user-info h3 {
-  font-size: 1.8rem;
-  margin: 0;
-  color: #fff;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.user-info p {
-  font-size: 1.2rem;
-  color: #b8b8b8;
-  margin-top: 0.3rem;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
-}
-
-/* Card Text */
-.card h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: #ffffff;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-#details p {
-  margin: 0.5rem 0;
-  color: #ffffff;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 /* Footer Styles */
@@ -182,6 +115,47 @@ footer {
   100% {
     transform: rotate(360deg);
   }
+}
+
+/* Profile Picture and User Info Styles */
+.profile-container {
+  display: flex;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.profile-picture {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+.profile-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.user-info h3 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: black; /* Change text color to black */
+}
+
+.user-info p {
+  font-size: 1rem;
+  margin: 0;
+  color: black; /* Change text color to black */
 }
 
 /* Responsive Styles */
