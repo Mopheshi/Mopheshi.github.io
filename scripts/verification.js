@@ -21,11 +21,15 @@ document.addEventListener("DOMContentLoaded", () => {
           const profileImg = document.getElementById("profile-img");
           profileContainer.style.display = "flex";
 
+          // Log the image link for debugging
+          console.log("Image Link:", profileImgLink);
+
           // Set the profile image source
           profileImg.src = profileImgLink;
 
           // Handle image loading error
           profileImg.onerror = () => {
+            console.error("Image failed to load, using default avatar.");
             profileImg.src = defaultAvatar; // Fallback to default avatar
           };
 
@@ -33,11 +37,24 @@ document.addEventListener("DOMContentLoaded", () => {
             "full-name"
           ).innerText = `${data["FIRST NAME"]} ${data["LAST NAME"]}`;
           document.getElementById("role").innerText = data["ROLE"];
+
+          // Format Date of Completion
+          const dateOfCompletion = new Date(data["DATE OF COMPLETION"]);
+          const options = {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          };
+          const formattedDate = dateOfCompletion
+            .toLocaleDateString("en-US", options)
+            .replace(/(\d+)(st|nd|rd|th)/, "$1$2"); // Add ordinal suffix
+
           details.innerHTML += `
                       <p><strong>Course:</strong> ${data["COURSE"]}</p>
                       <p><strong>Certificate ID:</strong> ${data["CERTIFICATE ID"]}</p>
                       <p><strong>Status:</strong> ${data["STATUS"]}</p>
-                      <p><strong>Date of Completion:</strong> ${data["DATE OF COMPLETION"]}</p>
+                      <p><strong>Date of Completion:</strong> ${formattedDate}</p>
                   `;
         } else {
           details.innerHTML = "<p>Certificate not found.</p>";
