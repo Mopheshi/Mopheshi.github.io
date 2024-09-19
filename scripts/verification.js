@@ -3,38 +3,43 @@ document.addEventListener("DOMContentLoaded", () => {
   const certificateID = urlParams.get("certificateID");
 
   const details = document.getElementById("details");
-  const loader = document.getElementById("loader"); // Reference to the loader element
-  const profileContainer = document.getElementById("profile-container"); // Profile container
+  const loader = document.getElementById("loader");
+  const profileContainer = document.getElementById("profile-container");
 
-  // Function to convert Google Drive link to a direct image link
-  const getDriveImageLink = (driveLink) => {
-    const fileId = driveLink.match(/[-\w]{25,}/); // Extract the file ID from the link
-    return fileId ? `https://drive.google.com/uc?id=${fileId}` : driveLink;
-  };
+  const defaultAvatar = "pictures/avatar.png";
+
+  const getImageLink = (imageLink) => imageLink;
 
   if (certificateID) {
-    // Show loader while fetching data
     loader.style.display = "block";
-    profileContainer.style.display = "none"; // Hide profile container initially
+    profileContainer.style.display = "none";
 
     fetch(
       `https://script.google.com/macros/s/AKfycbyPyKUutbDtuHO8tOuea_ajgso4naj-vegI-_6RwzaC-sqxL7bIKR2NWOFeYoguFI4w/exec?certificateID=${certificateID}`
     )
       .then((response) => response.json())
       .then((data) => {
-        // Hide loader once data is fetched
         loader.style.display = "none";
 
         if (data["CERTIFICATE ID"]) {
-          // Show the profile picture and user info
-          const profileImgLink = getDriveImageLink(data["PICTURE"]); // Convert Google Drive link
-          document.getElementById("profile-img").src = profileImgLink;
+          const profileImgLink = getImageLink(data["PICTURE"]);
+          const profileImg = document.getElementById("profile-img");
+
+          profileImg.onload = () => {
+            profileContainer.style.display = "flex"; // Show container after image is loaded
+          };
+
+          profileImg.onerror = () => {
+            profileImg.src = defaultAvatar; // Use the avatar from the pictures folder if the image fails to load
+            profileContainer.style.display = "flex";
+          };
+
+          profileImg.src = profileImgLink;
+
           document.getElementById(
             "full-name"
           ).innerText = `${data["FIRST NAME"]} ${data["LAST NAME"]}`;
           document.getElementById("role").innerText = data["ROLE"];
-
-          profileContainer.style.display = "flex"; // Show profile container once data is available
 
           details.innerHTML += `
             <p><strong>Course:</strong> ${data["COURSE"]}</p>
@@ -49,14 +54,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       })
       .catch((error) => {
-        // Hide loader and show error message
         loader.style.display = "none";
-        console.error("Error fetching certificate details:", error);
         details.innerHTML =
           "<p>There was an error retrieving the certificate details.</p>";
+        console.error("Error fetching certificate details:", error);
       });
   } else {
-    // Hide loader if no certificate ID is provided
     loader.style.display = "none";
     details.innerHTML = "<p>No certificate ID provided.</p>";
   }

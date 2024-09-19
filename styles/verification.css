@@ -45,11 +45,14 @@ header p {
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.18);
   padding: 2rem;
-  max-width: 600px;
+  max-width: 400px;
   width: 100%;
   text-align: center;
   color: #fff;
   animation: fadeIn 2s ease-in;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .card h2 {
@@ -67,49 +70,20 @@ header p {
   color: black;
 }
 
-a {
-  color: #27ae60;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-a:hover {
-  color: #2ecc71;
-  text-decoration: underline;
-}
-
-/* Circular Progress Bar */
-.loader {
-  border: 8px solid #f3f3f3;
-  border-top: 8px solid #27ae60;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  animation: spin 1s linear infinite;
-  margin: 0 auto; /* Center the loader */
-}
-
-/* Footer Styles */
-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #333;
-  color: white;
-}
-
-/* Profile Picture and User Info Styles */
+/* Avatar Image (Fallback) */
 .profile-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   margin-top: 1.5rem;
 }
 
 .profile-picture {
-  width: 80px;
-  height: 80px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   overflow: hidden;
-  margin-right: 1.5rem;
+  margin-bottom: 1rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border: 2px solid rgba(255, 255, 255, 0.6);
 }
@@ -121,9 +95,7 @@ footer {
 }
 
 .user-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  text-align: center;
 }
 
 .user-info h3 {
@@ -150,13 +122,12 @@ footer {
   }
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+/* Footer Styles */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #333;
+  color: white;
 }
 
 /* Responsive Styles */
