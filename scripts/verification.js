@@ -4,10 +4,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const details = document.getElementById("details");
   const loader = document.getElementById("loader"); // Reference to the loader element
+  const profileContainer = document.getElementById("profile-container"); // Profile container
+
+  // Function to convert Google Drive link to a direct image link
+  const getDriveImageLink = (driveLink) => {
+    const fileId = driveLink.match(/[-\w]{25,}/); // Extract the file ID from the link
+    return fileId ? `https://drive.google.com/uc?id=${fileId}` : driveLink;
+  };
 
   if (certificateID) {
     // Show loader while fetching data
     loader.style.display = "block";
+    profileContainer.style.display = "none"; // Hide profile container initially
 
     fetch(
       `https://script.google.com/macros/s/AKfycbyPyKUutbDtuHO8tOuea_ajgso4naj-vegI-_6RwzaC-sqxL7bIKR2NWOFeYoguFI4w/exec?certificateID=${certificateID}`
@@ -18,11 +26,15 @@ document.addEventListener("DOMContentLoaded", () => {
         loader.style.display = "none";
 
         if (data["CERTIFICATE ID"]) {
-          document.getElementById("profile-img").src = data["PICTURE"];
+          // Show the profile picture and user info
+          const profileImgLink = getDriveImageLink(data["PICTURE"]); // Convert Google Drive link
+          document.getElementById("profile-img").src = profileImgLink;
           document.getElementById(
             "full-name"
           ).innerText = `${data["FIRST NAME"]} ${data["LAST NAME"]}`;
           document.getElementById("role").innerText = data["ROLE"];
+
+          profileContainer.style.display = "flex"; // Show profile container once data is available
 
           details.innerHTML += `
             <p><strong>Course:</strong> ${data["COURSE"]}</p>
