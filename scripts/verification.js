@@ -1,11 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);
   const certificateID = urlParams.get("certificateID");
-
   const details = document.getElementById("details");
   const loader = document.getElementById("loader");
   const profileContainer = document.getElementById("profile-container");
-
   const defaultAvatar = "pictures/avatar.png";
 
   const getImageLink = (imageLink) => imageLink;
@@ -20,32 +18,28 @@ document.addEventListener("DOMContentLoaded", () => {
       .then((response) => response.json())
       .then((data) => {
         loader.style.display = "none";
-
         if (data["CERTIFICATE ID"]) {
           const profileImgLink = getImageLink(data["PICTURE"]);
           const profileImg = document.getElementById("profile-img");
-
           profileContainer.style.display = "flex";
 
           // Set the profile image or use default avatar if an error occurs
-          profileImg.src = profileImgLink;
+          profileImg.src = profileImgLink || defaultAvatar; // Use default if no link
+
+          // Handle image load error
           profileImg.onerror = () => {
-            profileImg.src = defaultAvatar; // Use fallback avatar if image fails to load
+            profileImg.src = defaultAvatar; // Fallback to default avatar
           };
 
           document.getElementById(
             "full-name"
           ).innerText = `${data["FIRST NAME"]} ${data["LAST NAME"]}`;
           document.getElementById("role").innerText = data["ROLE"];
-
           details.innerHTML += `
-            <p><strong>Course:</strong> ${data["COURSE"]}</p>
-            <p><strong>Certificate ID:</strong> ${data["CERTIFICATE ID"]}</p>
-            <p><strong>Status:</strong> ${data["STATUS"]}</p>
-            <p><strong>Date of Completion:</strong> ${new Date(
-              data["DATE OF COMPLETION"]
-            ).toLocaleDateString()}</p>
-          `;
+                      <p><strong>Course:</strong> ${data["COURSE"]}</p>
+                      <p><strong>Certificate ID:</strong> ${data["CERTIFICATE ID"]}</p>
+                      <p><strong>Status:</strong> ${data["STATUS"]}</p>
+                  `;
         } else {
           details.innerHTML = "<p>Certificate not found.</p>";
         }
