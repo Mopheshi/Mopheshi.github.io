@@ -6,8 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const profileContainer = document.getElementById("profile-container");
   const defaultAvatar = "pictures/avatar.png";
 
-  const getImageLink = (imageLink) => imageLink;
-
   if (certificateID) {
     loader.style.display = "block";
     profileContainer.style.display = "none";
@@ -19,14 +17,14 @@ document.addEventListener("DOMContentLoaded", () => {
       .then((data) => {
         loader.style.display = "none";
         if (data["CERTIFICATE ID"]) {
-          const profileImgLink = getImageLink(data["PICTURE"]);
+          const profileImgLink = data["PICTURE"] || defaultAvatar; // Use default if no link
           const profileImg = document.getElementById("profile-img");
           profileContainer.style.display = "flex";
 
-          // Set the profile image or use default avatar if an error occurs
-          profileImg.src = profileImgLink || defaultAvatar; // Use default if no link
+          // Set the profile image source
+          profileImg.src = profileImgLink;
 
-          // Handle image load error
+          // Handle image loading error
           profileImg.onerror = () => {
             profileImg.src = defaultAvatar; // Fallback to default avatar
           };
@@ -39,6 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
                       <p><strong>Course:</strong> ${data["COURSE"]}</p>
                       <p><strong>Certificate ID:</strong> ${data["CERTIFICATE ID"]}</p>
                       <p><strong>Status:</strong> ${data["STATUS"]}</p>
+                      <p><strong>Date of Completion:</strong> ${data["DATE OF COMPLETION"]}</p>
                   `;
         } else {
           details.innerHTML = "<p>Certificate not found.</p>";
