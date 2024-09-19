@@ -25,16 +25,13 @@ document.addEventListener("DOMContentLoaded", () => {
           const profileImgLink = getImageLink(data["PICTURE"]);
           const profileImg = document.getElementById("profile-img");
 
-          profileImg.onload = () => {
-            profileContainer.style.display = "flex"; // Show container after image is loaded
-          };
+          profileContainer.style.display = "flex";
 
-          profileImg.onerror = () => {
-            profileImg.src = defaultAvatar; // Use the avatar from the pictures folder if the image fails to load
-            profileContainer.style.display = "flex";
-          };
-
+          // Set the profile image or use default avatar if an error occurs
           profileImg.src = profileImgLink;
+          profileImg.onerror = () => {
+            profileImg.src = defaultAvatar; // Use fallback avatar if image fails to load
+          };
 
           document.getElementById(
             "full-name"
