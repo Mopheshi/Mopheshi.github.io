@@ -172,6 +172,11 @@ footer {
     font-size: 1.5rem;
   }
 
+  .profile-picture {
+    width: 100px;
+    height: 100px;
+  }
+
   #details {
     font-size: 1rem;
   }
