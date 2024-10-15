@@ -17,28 +17,17 @@ document.addEventListener("DOMContentLoaded", () => {
       .then((data) => {
         loader.style.display = "none";
         if (data["CERTIFICATE ID"]) {
-          const profileImgLink = data["PICTURE"] || defaultAvatar; // Use default if no link
+          const profileImgLink = data["PICTURE"] || defaultAvatar;
           const profileImg = document.getElementById("profile-img");
           profileContainer.style.display = "flex";
-
-          // Log the image link for debugging
-          console.log("Image Link:", profileImgLink);
-
-          // Set the profile image source
           profileImg.src = profileImgLink;
-
-          // Handle image loading error
           profileImg.onerror = () => {
-            console.error("Image failed to load, using default avatar.");
-            profileImg.src = defaultAvatar; // Fallback to default avatar
+            profileImg.src = defaultAvatar;
           };
-
           document.getElementById(
             "full-name"
           ).innerText = `${data["FIRST NAME"]} ${data["LAST NAME"]}`;
           document.getElementById("role").innerText = data["ROLE"];
-
-          // Format Date of Completion
           const dateOfCompletion = new Date(data["DATE OF COMPLETION"]);
           const options = {
             weekday: "long",
@@ -46,16 +35,16 @@ document.addEventListener("DOMContentLoaded", () => {
             month: "long",
             day: "numeric",
           };
-          const formattedDate = dateOfCompletion
-            .toLocaleDateString("en-US", options)
-            .replace(/(\d+)(st|nd|rd|th)/, "$1$2"); // Add ordinal suffix
-
+          const formattedDate = dateOfCompletion.toLocaleDateString(
+            "en-US",
+            options
+          );
           details.innerHTML += `
-                      <p><strong>Course:</strong> ${data["COURSE"]}</p>
-                      <p><strong>Certificate ID:</strong> ${data["CERTIFICATE ID"]}</p>
-                      <p><strong>Status:</strong> ${data["STATUS"]}</p>
-                      <p><strong>Date of Completion:</strong> ${formattedDate}</p>
-                  `;
+            <p><strong>Course:</strong> ${data["COURSE"]}</p>
+            <p><strong>Certificate ID:</strong> ${data["CERTIFICATE ID"]}</p>
+            <p><strong>Status:</strong> ${data["STATUS"]}</p>
+            <p><strong>Date of Completion:</strong> ${formattedDate}</p>
+          `;
         } else {
           details.innerHTML = "<p>Certificate not found.</p>";
         }
