@@ -50,6 +50,12 @@ section.exiting {
     transition: opacity 0.6s ease-in, transform 0.6s ease-in;
 }
 
+/* Experience Page Text Color */
+#experience h3,
+#experience p {
+    color: #fff; /* Ensure text is white */
+}
+
 /* Green Links */
 a {
     color: #27ae60;
@@ -60,6 +66,17 @@ a {
 a:hover {
     color: #2ecc71;
     text-decoration: underline;
+}
+
+/* Ensure Footer Stays at the Bottom */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
 }
 
 /* Footer Styles */

@@ -6,9 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>About Me - Edward Ndachimya</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" href="pictures/favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="/pictures/favicon.ico" type="image/x-icon"/>
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch("/pages/components/header.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.body.insertAdjacentHTML("afterbegin", data);
+                });
+
+            fetch("/pages/components/footer.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.body.insertAdjacentHTML("beforeend", data);
+                });
+        });
+    </script>
 </head>
 <body class="bg-black text-white">
 <header class="bg-gray-800 text-white p-4">
@@ -31,9 +46,5 @@
         <p>Placeholder text for about me section.</p>
     </section>
 </main>
-
-<footer class="bg-gray-800 text-white text-center p-4">
-    <p>&copy; 2024 Edward Ndachimya. All rights reserved.</p>
-</footer>
 </body>
 </html>
