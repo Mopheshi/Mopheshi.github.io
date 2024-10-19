@@ -1,24 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const sections = document.querySelectorAll("section");
+    const tabLinks = document.querySelectorAll(".tab-link");
+    const tabContents = document.querySelectorAll(".tab-content");
 
-  const observer = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          entry.target.classList.remove("exiting");
-        } else {
-          entry.target.classList.remove("visible");
-          entry.target.classList.add("exiting");
-        }
-      });
-    },
-    {
-      threshold: 0.1, // Trigger when 10% of the section is visible
-    }
-  );
+    tabLinks.forEach(link => {
+        link.addEventListener("click", (e) => {
+            e.preventDefault();
+            const targetTab = e.target.getAttribute("data-tab");
 
-  sections.forEach((section) => {
-    observer.observe(section);
-  });
+            tabContents.forEach(content => {
+                content.classList.add("hidden");
+            });
+
+            document.getElementById(targetTab).classList.remove("hidden");
+
+            tabLinks.forEach(link => {
+                link.classList.remove("text-green-500");
+            });
+
+            e.target.classList.add("text-green-500");
+        });
+    });
 });

@@ -2,185 +2,81 @@
 
 /* General Styles */
 body {
-  font-family: "Poppins", sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
-  color: #333;
-  line-height: 1.6;
-  scroll-behavior: smooth;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.6;
+    scroll-behavior: smooth;
 }
 
-/* Header with background image and opacity overlay */
+/* Header Styles */
 header {
-  position: relative;
-  height: 250px;
-  background-image: url("/pictures/picture.jpg");
-  background-size: cover;
-  background-position: center;
-  text-align: center;
-  color: white;
-  padding-top: 120px;
-  font-size: 1.5rem;
-}
-
-header:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-}
-
-header h1,
-header p {
-  position: relative;
-  z-index: 2;
-  color: white;
+    text-align: center;
+    padding: 2rem;
+    background-color: #333;
+    color: white;
 }
 
 header h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  animation: bounceIn 1.5s ease-in-out;
+    font-size: 2.5rem;
+    margin: 0;
 }
 
 header p {
-  font-size: 1.2rem;
-  font-weight: 500;
-}
-
-@keyframes bounceIn {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  50% {
-    transform: translateY(10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    font-size: 1.2rem;
+    margin: 0;
 }
 
 /* Section Styles */
 section {
-  margin: 2rem auto;
-  max-width: 900px;
-  padding: 2rem;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    margin: 2rem auto;
+    max-width: 900px;
+    padding: 2rem;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 section.visible {
-  opacity: 1;
-  transform: translateY(0);
+    opacity: 1;
+    transform: translateY(0);
 }
 
 section.exiting {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-in, transform 0.6s ease-in;
-}
-
-/* Project Grid Layout */
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-}
-
-/* Glassmorphism with Animated Gradient Border */
-#projects .project {
-  position: relative;
-  padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(15px);
-  border-radius: 30px;
-  overflow: hidden;
-  z-index: 1;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-#projects .project::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 30px;
-  padding: 1px;
-  /* background: linear-gradient(135deg, #00ff0d, #6f00ff); */
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: destination-out;
-  mask-composite: exclude;
-  z-index: -1;
-  transition: padding 0.4s ease, border-radius 0.4s ease;
-}
-
-#projects .project:hover {
-  transform: scale(1.05);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-
-#projects .project:hover::before {
-  padding: 6px;
-  border-radius: 35px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-in, transform 0.6s ease-in;
 }
 
 /* Green Links */
 a {
-  color: #27ae60;
-  text-decoration: none;
-  transition: color 0.3s ease;
+    color: #27ae60;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #2ecc71;
-  text-decoration: underline;
+    color: #2ecc71;
+    text-decoration: underline;
 }
 
-/* Footer with Enlarged Icons and Gradient Color */
+/* Footer Styles */
 footer {
-  text-align: center;
-  padding: 2rem;
-  background-color: #333;
-  color: white;
-}
-
-footer .icon {
-  margin: 0 10px;
-  display: inline-block;
-  font-size: 30px;
-  background: linear-gradient(135deg, #00ff0d, #6f00ff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: transform 0.3s ease, background 0.3s ease;
-}
-
-footer .icon:hover {
-  transform: scale(1.4);
+    text-align: center;
+    padding: 2rem;
+    background-color: #333;
+    color: white;
 }
 
 /* Responsive Design */
 @media (max-width: 900px) {
-  .project-grid {
-    grid-template-columns: 1fr;
-  }
+    header h1 {
+        font-size: 2.2rem;
+    }
 
-  header h1 {
-    font-size: 2.2rem;
-  }
-
-  header p {
-    font-size: 1rem;
-  }
+    header p {
+        font-size: 1rem;
+    }
 }
