@@ -89,7 +89,7 @@ nav ul li {
     right: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.5); /* dark overlay */
-    backdrop-filter: blur(1px); /* blur effect */
+    backdrop-filter: blur(3px); /* blur effect */
 }
 
 .hero-content {
@@ -268,7 +268,23 @@ nav ul li {
     }
 }
 
-/* Smooth Scrolling */
+/* Custom Scroll Bars with Smooth Scrolling */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #270040;
+    border-radius: 10px;
+    border: 3px solid #1a1a1a;
+}
+
 html {
     scroll-behavior: smooth;
+    scrollbar-color: #270040 #1a1a1a;
+    scrollbar-width: thin;
 }
