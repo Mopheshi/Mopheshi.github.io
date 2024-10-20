@@ -11,19 +11,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-    color: #7f1cc3;
+    color: white;
     text-decoration: none;
 }
 
 /* Focus States for Links and Buttons */
 a:focus, .btn:focus {
-    outline: 2px solid #4d007e;
+    outline: 2px solid #270040;
     outline-offset: 2px;
 }
 
 /*hover*/
 a:hover {
-    color: #9e00ff;
+    color: #6a00aa;
 }
 
 /* Header */
@@ -63,7 +63,7 @@ nav ul li {
 }
 
 .social-links a:hover {
-    color: #9b00ff;
+    color: #6a00aa;
 }
 
 /* Hero Section with Parallax */
@@ -117,7 +117,8 @@ nav ul li {
 }
 
 .btn:hover {
-    background-color: #9a00ff;
+    background-color: #6a00aa;
+    color: white;
 }
 
 .scroll-down {
@@ -159,7 +160,7 @@ nav ul li {
 .info-item h3 {
     font-size: 1.5rem;
     margin-bottom: 10px;
-    color: #4d007e;
+    color: #6a00aa;
 }
 
 .info-item p {
