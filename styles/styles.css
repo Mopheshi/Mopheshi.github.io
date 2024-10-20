@@ -11,7 +11,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-    color: white;
+    color: #270040;
     text-decoration: none;
 }
 
@@ -23,7 +23,7 @@ a:focus, .btn:focus {
 
 /*hover*/
 a:hover {
-    color: #0800ff;
+    color: #4d007e;
 }
 
 /* Header */
@@ -63,7 +63,7 @@ nav ul li {
 }
 
 .social-links a:hover {
-    color: #007BFF;
+    color: #270040;
 }
 
 /* Hero Section with Parallax */
@@ -74,7 +74,7 @@ nav ul li {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-image: url('pictures/picture.png');
+    background-image: url('../pictures/picture.png');
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -110,20 +110,79 @@ nav ul li {
 
 .btn {
     padding: 10px 20px;
-    background-color: #007BFF;
+    background-color: #270040;
     border-radius: 5px;
     color: white;
     transition: 0.3s;
 }
 
 .btn:hover {
-    background-color: #0056b3;
+    background-color: #270040;
 }
 
 .scroll-down {
     font-size: 2rem;
     margin-top: 20px;
     animation: bounce 2s infinite;
+}
+
+/* Personal Info Section */
+.personal-info {
+    padding: 50px;
+    background-color: #1a1a1a;
+    text-align: center;
+}
+
+.personal-info h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.info-item {
+    background-color: #111;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.info-item:hover {
+    transform: translateY(-10px);
+    background-color: #270040;
+}
+
+.info-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #4d007e;
+}
+
+.info-item p {
+    font-size: 1rem;
+    color: white;
+}
+
+.video-placeholder {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    border-radius: 10px;
+}
+
+.video-placeholder iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 /* About Me Section */
@@ -151,7 +210,7 @@ nav ul li {
 
 .stats h3 {
     font-size: 3rem;
-    color: #007BFF;
+    color: #270040;
 }
 
 .stats p {
