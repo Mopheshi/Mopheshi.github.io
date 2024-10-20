@@ -1,23 +1,11 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const tabLinks = document.querySelectorAll(".tab-link");
-    const tabContents = document.querySelectorAll(".tab-content");
+document.addEventListener('DOMContentLoaded', function () {
+    AOS.init();
 
-    tabLinks.forEach(link => {
-        link.addEventListener("click", (e) => {
-            e.preventDefault();
-            const targetTab = e.target.getAttribute("data-tab");
-
-            tabContents.forEach(content => {
-                content.classList.add("hidden");
-            });
-
-            document.getElementById(targetTab).classList.remove("hidden");
-
-            tabLinks.forEach(link => {
-                link.classList.remove("text-green-500");
-            });
-
-            e.target.classList.add("text-green-500");
+    const scrollDown = document.querySelector('.scroll-down');
+    scrollDown.addEventListener('click', function () {
+        window.scrollTo({
+            top: document.querySelector('.about-me').offsetTop,
+            behavior: 'smooth'
         });
     });
 });
