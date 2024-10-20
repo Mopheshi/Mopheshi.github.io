@@ -16,14 +16,14 @@ document.addEventListener('DOMContentLoaded', function () {
     const countUp = (counter) => {
         const updateCount = () => {
             const target = parseInt(counter.getAttribute('data-target'), 10);
-            const count = parseInt(counter.innerText, 10);
+            const count = parseInt(counter.innerText.replace(/\D/g, ''), 10);
             const increment = target / speed;
 
             if (count < target) {
-                counter.innerText = Math.ceil(count + increment);
-                setTimeout(updateCount);
+                counter.innerText = `+${Math.ceil(count + increment)}`;
+                setTimeout(updateCount, 1);
             } else {
-                counter.innerText = target;
+                counter.innerText = `+${target}`;
             }
         };
 
