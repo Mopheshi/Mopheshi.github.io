@@ -10,30 +10,37 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     const counters = document.querySelectorAll('.stats h3');
-    const speed = 1000;
+    const speed = 200;
     let hasAnimated = false; // To prevent multiple triggers
 
-    const countUp = () => {
-        counters.forEach(counter => {
-            const target = +counter.getAttribute('data-target');
-            const currentCount = +counter.innerText.replace(/\D/g, '');
+    const countUp = (counter, target) => {
+        let currentCount = 0;
+        const increment = Math.ceil(target / (speed / 30)); // Calculate increment per frame
 
-            const increment = Math.ceil(target / speed); // Increment value
-
+        const updateCounter = () => {
             if (currentCount < target) {
-                counter.innerText = `${Math.min(currentCount + increment, target)}+`;
-                setTimeout(countUp, 30);
+                currentCount += increment;
+                if (currentCount > target) {
+                    currentCount = target; // Ensure we don't exceed the target
+                }
+                counter.innerText = `${currentCount}+`;
+                requestAnimationFrame(updateCounter); // Request next frame
             } else {
-                counter.innerText = `${target}+`;
+                counter.innerText = `${target}+`; // Ensure it ends at the target
             }
-        });
+        };
+
+        updateCounter();
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting && !hasAnimated) {
                 hasAnimated = true; // Prevents re-triggering
-                countUp();
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    countUp(counter, target); // Start counting for each counter
+                });
             }
         });
     });

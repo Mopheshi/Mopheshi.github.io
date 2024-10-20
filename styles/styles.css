@@ -231,6 +231,113 @@ nav ul li {
     font-size: 1.2rem;
 }
 
+/* Experience Section */
+.experience {
+    padding: 50px;
+    background-color: #1a1a1a;
+    text-align: center;
+}
+
+.experience h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.experience-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.experience-item {
+    background-color: #111;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.experience-item:hover {
+    transform: translateY(-10px);
+    background-color: #270040;
+}
+
+.experience-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #6a00aa;
+}
+
+.experience-item p, .experience-item ul {
+    font-size: 1rem;
+    color: white;
+}
+
+.experience-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.experience-item ul li {
+    margin-bottom: 10px;
+}
+
+/* Projects Section */
+.projects {
+    padding: 50px;
+    background-color: #1a1a1a;
+    text-align: center;
+}
+
+.projects h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project-item {
+    background-color: #111;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.project-item:hover {
+    transform: translateY(-10px);
+    background-color: #270040;
+}
+
+.project-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #6a00aa;
+}
+
+.project-item a {
+    color: #6a00aa;
+    text-decoration: none;
+}
+
+.project-item a:hover {
+    text-decoration: underline;
+}
+
+.project-screenshots {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.project-screenshots img {
+    width: 100%;
+    max-width: 150px;
+    border-radius: 5px;
+}
+
 /* Animations */
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% {

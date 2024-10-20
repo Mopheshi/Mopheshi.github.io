@@ -2,9 +2,62 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Projects</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+<header role="banner">
+    <div class="name">
+        <a href="/index.html" aria-label="Ndachimya, go to homepage">Ndachimya</a>
+        <img src="/pictures/signature.png" alt="Signature" class="signature-placeholder">
+    </div>
+    <nav role="navigation">
+        <ul>
+            <li><a href="/index.html" aria-label="Navigate to Home">Home</a></li>
+            <li><a href="/pages/projects.html" aria-label="Navigate to Portfolio">Projects</a></li>
+            <li><a href="/pages/experience.html" aria-label="Navigate to Portfolio">Experience</a></li>
+        </ul>
+    </nav>
+    <div class="social-links">
+        <a href="https://www.linkedin.com/in/ndachimyaedward" aria-label="Visit Ndachimya's LinkedIn"><i
+                class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/Mopheshi/" aria-label="Visit Ndachimya's GitHub"><i class="fab fa-github"></i></a>
+    </div>
+</header>
 
+<section class="projects" role="region" aria-labelledby="projects-title" data-aos="fade-up">
+    <h2 id="projects-title">Projects</h2>
+    <div class="project-list">
+        <div class="project-item" data-aos="fade-up">
+            <h3><a href="https://github.com/Mopheshi/project1" target="_blank">Project 1</a></h3>
+            <div class="project-screenshots">
+                <img src="/pictures/picture.png" alt="Project 1 Screenshot 1">
+                <img src="/pictures/picture.png" alt="Project 1 Screenshot 2">
+            </div>
+        </div>
+        <div class="project-item" data-aos="fade-up">
+            <h3><a href="https://github.com/Mopheshi/project2" target="_blank">Project 2</a></h3>
+            <div class="project-screenshots">
+                <img src="/pictures/picture.png" alt="Project 2 Screenshot 1">
+                <img src="/pictures/picture.png" alt="Project 2 Screenshot 2">
+            </div>
+        </div>
+        <div class="project-item" data-aos="fade-up">
+            <h3><a href="https://github.com/Mopheshi/project3" target="_blank">Project 3</a></h3>
+            <div class="project-screenshots">
+                <img src="/pictures/picture.png" alt="Project 3 Screenshot 1">
+                <img src="/pictures/picture.png" alt="Project 3 Screenshot 2">
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="/scripts/script.js"></script>
 </body>
 </html>
