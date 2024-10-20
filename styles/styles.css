@@ -2,8 +2,13 @@
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0;
-    color: #1a1a1a;
+    background-color: #1a1a1a;
+    color: white;
+}
+
+/*Text colors to white*/
+h1, h2, h3, h4, h5, h6 {
+    color: white;
 }
 
 a {
