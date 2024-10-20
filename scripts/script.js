@@ -11,12 +11,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Counting effect
     const counters = document.querySelectorAll('.stats h3');
-    const speed = 200; // Adjust the speed as needed
+    const speed = 200;
 
     const countUp = (counter) => {
         const updateCount = () => {
-            const target = +counter.getAttribute('data-target');
-            const count = +counter.innerText;
+            const target = parseInt(counter.getAttribute('data-target'), 10);
+            const count = parseInt(counter.innerText, 10);
             const increment = target / speed;
 
             if (count < target) {
@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }, {threshold: 0.5});
 
     counters.forEach(counter => {
-        counter.setAttribute('data-target', counter.innerText);
+        counter.setAttribute('data-target', counter.innerText.replace(/\D/g, ''));
         counter.innerText = '0';
         observer.observe(counter);
     });
