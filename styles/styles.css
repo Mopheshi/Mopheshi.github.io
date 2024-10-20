@@ -1,12 +1,31 @@
-/* General Styles */
+/* Light Theme (Default) */
 body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #1a1a1a;
-    color: white;
+    background-color: #f0f0f0;
+    color: #1a1a1a;
 }
 
-/*Text colors to white*/
+/* Dark Theme */
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+}
+
+/* Focus and Button Styling */
+#theme-toggle {
+    padding: 10px;
+    margin-left: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #f0f0f0;
+}
+
+#theme-toggle:hover {
+    color: #007BFF;
+}
+
+
 h1, h2, h3, h4, h5, h6 {
     color: white;
 }
@@ -16,13 +35,30 @@ a {
     text-decoration: none;
 }
 
+/* Focus States for Links and Buttons */
+a:focus, .btn:focus {
+    outline: 2px solid #4d007e;
+    outline-offset: 2px;
+}
+
+/*hover*/
+a:hover {
+    color: #0800ff;
+}
+
 /* Header */
 header {
     display: flex;
     justify-content: space-between;
     padding: 20px 50px;
+    background-color: #c3c3c3;
+}
+
+
+header.dark-mode {
     background-color: #111;
 }
+
 
 .logo {
     font-size: 24px;
@@ -44,7 +80,7 @@ nav ul li {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-image: url('pictures/picture.jpg');
+    background-image: url('pictures/picture.png');
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -117,6 +153,10 @@ footer {
     display: flex;
     justify-content: center;
     padding: 20px;
+    background-color: #111;
+}
+
+footer.dark-mode {
     background-color: #111;
 }
 
