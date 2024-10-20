@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     const counters = document.querySelectorAll('.stats h3');
-    const speed = 200;
+    const speed = 1000;
     let hasAnimated = false; // To prevent multiple triggers
 
     const countUp = () => {
