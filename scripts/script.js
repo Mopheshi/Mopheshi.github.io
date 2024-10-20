@@ -20,10 +20,10 @@ document.addEventListener('DOMContentLoaded', function () {
             const increment = target / speed;
 
             if (count < target) {
-                counter.innerText = `+${Math.ceil(count + increment)}`;
+                counter.innerText = `${Math.ceil(count + increment)}+`;
                 setTimeout(updateCount, 1);
             } else {
-                counter.innerText = `+${target}`;
+                counter.innerText = `${target}+`;
             }
         };
 
