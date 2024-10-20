@@ -11,24 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-<header role="banner">
-    <div class="name">
-        <a href="/index.html" aria-label="Ndachimya, go to homepage">Ndachimya</a>
-        <img src="/pictures/signature.png" alt="Signature" class="signature-placeholder">
-    </div>
-    <nav role="navigation">
-        <ul>
-            <li><a href="/index.html" aria-label="Navigate to Home">Home</a></li>
-            <li><a href="/pages/projects.html" aria-label="Navigate to Portfolio">Projects</a></li>
-            <li><a href="/pages/experience.html" aria-label="Navigate to Portfolio">Experiences</a></li>
-        </ul>
-    </nav>
-    <div class="social-links">
-        <a href="https://www.linkedin.com/in/ndachimyaedward" aria-label="Visit Ndachimya's LinkedIn"><i
-                class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/Mopheshi/" aria-label="Visit Ndachimya's GitHub"><i class="fab fa-github"></i></a>
-    </div>
-</header>
+<div id="header-placeholder"></div>
 
 <section class="projects" role="region" aria-labelledby="projects-title" data-aos="fade-up">
     <h2 id="projects-title">Selected Projects</h2>
@@ -54,5 +37,14 @@
 
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script src="/scripts/script.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        fetch('/pages/components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+    });
+</script>
 </body>
 </html>

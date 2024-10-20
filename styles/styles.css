@@ -152,12 +152,6 @@ nav ul li {
     margin-bottom: 20px;
 }
 
-/*.info-grid {*/
-/*    display: grid;*/
-/*    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));*/
-/*    gap: 20px;*/
-/*}*/
-
 .info-grid {
     display: flex;
     justify-content: center;
