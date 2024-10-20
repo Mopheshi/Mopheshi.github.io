@@ -11,7 +11,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-    color: #270040;
+    color: #7f1cc3;
     text-decoration: none;
 }
 
@@ -23,7 +23,7 @@ a:focus, .btn:focus {
 
 /*hover*/
 a:hover {
-    color: #4d007e;
+    color: #9e00ff;
 }
 
 /* Header */
@@ -63,7 +63,7 @@ nav ul li {
 }
 
 .social-links a:hover {
-    color: #270040;
+    color: #9b00ff;
 }
 
 /* Hero Section with Parallax */
@@ -117,7 +117,7 @@ nav ul li {
 }
 
 .btn:hover {
-    background-color: #270040;
+    background-color: #9a00ff;
 }
 
 .scroll-down {
