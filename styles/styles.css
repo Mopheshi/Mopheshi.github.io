@@ -1,30 +1,10 @@
-/* Light Theme (Default) */
+/* General Styles */
 body {
-    background-color: #f0f0f0;
-    color: #1a1a1a;
-}
-
-/* Dark Theme */
-body.dark-mode {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
     background-color: #1a1a1a;
-    color: #f0f0f0;
+    color: white;
 }
-
-/* Focus and Button Styling */
-#theme-toggle {
-    padding: 10px;
-    margin-left: 20px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1.5rem;
-    color: #f0f0f0;
-}
-
-#theme-toggle:hover {
-    color: #007BFF;
-}
-
 
 h1, h2, h3, h4, h5, h6 {
     color: white;
@@ -51,14 +31,8 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 20px 50px;
-    background-color: #c3c3c3;
-}
-
-
-header.dark-mode {
     background-color: #111;
 }
-
 
 .logo {
     font-size: 24px;
@@ -153,10 +127,6 @@ footer {
     display: flex;
     justify-content: center;
     padding: 20px;
-    background-color: #111;
-}
-
-footer.dark-mode {
     background-color: #111;
 }
 
