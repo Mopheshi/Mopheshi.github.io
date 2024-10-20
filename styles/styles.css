@@ -35,9 +35,20 @@ header {
     background-color: #111;
 }
 
-.logo {
+.name {
     font-size: 24px;
     margin-right: auto;
+}
+
+.name a {
+    font-weight: bold;
+}
+
+.signature-placeholder {
+    width: 50px;
+    height: auto;
+    margin-left: 10px;
+    vertical-align: middle;
 }
 
 nav ul {
