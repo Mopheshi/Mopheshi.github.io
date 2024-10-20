@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (count < target) {
                 counter.innerText = Math.ceil(count + increment);
-                setTimeout(updateCount, 1);
+                setTimeout(updateCount);
             } else {
                 counter.innerText = target;
             }
