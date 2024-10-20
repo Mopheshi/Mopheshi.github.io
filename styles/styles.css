@@ -160,9 +160,9 @@ nav ul li {
 
 .info-grid {
     display: flex;
-    justify-content: center; /* Center items horizontally */
-    align-items: center; /* Center items vertically */
-    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 20px;
 }
 
@@ -243,7 +243,7 @@ nav ul li {
 .experience {
     padding: 50px;
     background-color: #1a1a1a;
-    text-align: center;
+    text-align: start;
 }
 
 .experience h2 {
@@ -293,7 +293,7 @@ nav ul li {
 .projects {
     padding: 50px;
     background-color: #1a1a1a;
-    text-align: center;
+    text-align: start;
 }
 
 .projects h2 {
