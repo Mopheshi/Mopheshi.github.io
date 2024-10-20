@@ -89,7 +89,7 @@ nav ul li {
     right: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.5); /* dark overlay */
-    /*backdrop-filter: blur(5px); !* blur effect *!*/
+    backdrop-filter: blur(1px); /* blur effect */
 }
 
 .hero-content {
@@ -211,7 +211,7 @@ nav ul li {
 
 .stats h3 {
     font-size: 3rem;
-    color: #270040;
+    color: #6a00aa;
 }
 
 .stats p {
