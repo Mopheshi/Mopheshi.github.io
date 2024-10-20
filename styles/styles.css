@@ -46,7 +46,7 @@ header {
 }
 
 .signature-placeholder {
-    width: 150px;
+    width: 120px;
     height: 50px;
     margin-left: 10px;
     vertical-align: middle;
@@ -155,6 +155,7 @@ nav ul li {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
+    align-items: center;
 }
 
 .info-item {
