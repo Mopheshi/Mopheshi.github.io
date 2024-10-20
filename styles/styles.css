@@ -154,10 +154,30 @@ nav ul li {
 
 .info-grid {
     display: flex;
-    justify-content: start;
-    align-items: center;
-    /*flex-wrap: wrap;*/
+    flex-wrap: wrap;
     gap: 20px;
+}
+
+.info-grid .info-item {
+    flex: 1 1 calc(25% - 20px); /* 4 items per row, accounting for gap */
+}
+
+@media (max-width: 1200px) {
+    .info-grid .info-item {
+        flex: 1 1 calc(33.33% - 20px); /* 3 items per row */
+    }
+}
+
+@media (max-width: 900px) {
+    .info-grid .info-item {
+        flex: 1 1 calc(50% - 20px); /* 2 items per row */
+    }
+}
+
+@media (max-width: 600px) {
+    .info-grid .info-item {
+        flex: 1 1 100%; /* 1 item per row */
+    }
 }
 
 .info-item {
