@@ -158,6 +158,7 @@ nav ul li {
     gap: 20px;
 }
 
+/* Responsive Grid */
 .info-grid .info-item {
     flex: 1 1 calc(25% - 20px); /* 4 items per row, accounting for gap */
 }
