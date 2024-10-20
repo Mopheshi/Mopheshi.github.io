@@ -152,9 +152,17 @@ nav ul li {
     margin-bottom: 20px;
 }
 
+/*.info-grid {*/
+/*    display: grid;*/
+/*    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));*/
+/*    gap: 20px;*/
+/*}*/
+
 .info-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    display: flex;
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
     gap: 20px;
 }
 
