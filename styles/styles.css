@@ -80,7 +80,7 @@ nav ul li {
 
 /* Hero Section with Parallax */
 .hero {
-    margin: 50px;
+    padding: 50px;
     position: relative;
     height: 100vh;
     display: flex;
