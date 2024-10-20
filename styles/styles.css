@@ -47,8 +47,19 @@ nav ul li {
     margin-left: 20px;
 }
 
+.social-links a {
+    margin: 0 10px;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #007BFF;
+}
+
 /* Hero Section with Parallax */
 .hero {
+    position: relative;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -61,6 +72,22 @@ nav ul li {
     background-color: #0d0d0d;
 }
 
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* dark overlay */
+    backdrop-filter: blur(5px); /* blur effect */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+}
 
 .hero h1 {
     font-size: 3rem;
@@ -122,24 +149,6 @@ nav ul li {
     font-size: 1.2rem;
 }
 
-/* Footer */
-footer {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-    background-color: #111;
-}
-
-.social-links a {
-    margin: 0 10px;
-    font-size: 1.5rem;
-    transition: color 0.3s;
-}
-
-.social-links a:hover {
-    color: #007BFF;
-}
-
 /* Animations */
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% {
@@ -188,4 +197,9 @@ footer {
     .btn {
         padding: 8px 16px;
     }
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
 }
