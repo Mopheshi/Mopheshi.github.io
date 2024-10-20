@@ -156,7 +156,7 @@ nav ul li {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    /*flex-wrap: wrap;*/
     gap: 20px;
 }
 
