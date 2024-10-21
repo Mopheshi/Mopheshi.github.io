@@ -2,12 +2,17 @@ document.addEventListener('DOMContentLoaded', function () {
     AOS.init();
 
     const scrollDown = document.querySelector('.scroll-down');
-    scrollDown.addEventListener('click', function () {
+    const learnMoreBtn = document.getElementById('learn-more-btn');
+
+    const scrollToAboutMe = () => {
         window.scrollTo({
             top: document.querySelector('.about-me').offsetTop,
             behavior: 'smooth'
         });
-    });
+    };
+
+    scrollDown.addEventListener('click', scrollToAboutMe);
+    learnMoreBtn.addEventListener('click', scrollToAboutMe);
 
     const counters = document.querySelectorAll('.stats h3');
     const speed = 200;
