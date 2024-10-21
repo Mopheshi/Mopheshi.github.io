@@ -68,20 +68,20 @@ header p {
 }
 
 a {
-    color: #27ae60;
+    color: #6a00aa;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #2ecc71;
+    color: #6a00aa;
     text-decoration: underline;
 }
 
 /* Circular Progress Bar */
 .loader {
     border: 8px solid #f3f3f3;
-    border-top: 8px solid #27ae60;
+    border-top: 8px solid #6a00aa;
     border-radius: 50%;
     width: 60px;
     height: 60px;
@@ -102,7 +102,7 @@ a:hover {
     border-radius: 50%;
     overflow: hidden;
     margin-right: 1.5rem;
-    border: 2px solid rgba(0, 255, 21, 0.6);
+    border: 2px solid rgb(106, 0, 170);
 }
 
 .profile-picture img {
@@ -201,7 +201,7 @@ body {
 
 .loader {
     border: 8px solid rgba(255, 255, 255, 0.2);
-    border-top: 8px solid #04ff00;
+    border-top: 8px solid #6a00aa;
     border-radius: 50%;
     width: 60px;
     height: 60px;
@@ -220,7 +220,7 @@ body {
     border-radius: 50%;
     overflow: hidden;
     margin-right: 1rem;
-    border: 2px solid #04ff00;
+    border: 2px solid #6a00aa;
 }
 
 .profile-picture img {
@@ -232,7 +232,7 @@ body {
 .user-info h3,
 .user-info p,
 #details p {
-    color: #04ff00;
+    color: black;
 }
 
 @keyframes fadeIn {
